@@ -1,0 +1,27 @@
+{
+    "name": "hereuwatch/mvc",
+    "type": "project",
+    "require": {
+        "illuminate/database": "9.9",
+        "league/plates": "3.4",
+        "illuminate/config": "^9.9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files" : [
+            "app/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Nguyễn Quốc Trạng"
+        },
+        {
+            "name": "Trần Thị Kim Linh"
+        }
+    ],
+    "minimum-stability": "stable"
+}
