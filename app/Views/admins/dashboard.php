@@ -128,7 +128,8 @@
                             <td>' . $cart['dia_chi'] . '</td>
                             <td>
                                 <div>
-                                <p class="badge rounded-pill alert-danger text-wrap" id="' . $cart['ma_hd'] . '">' . $cart['trang_thai_don_hang'] . '</p>
+                                <p class="badge rounded-pill ';
+                                if($cart['trang_thai_don_hang']==='Đã xác nhận') echo "alert-success"; else echo "alert-danger";echo'  text-wrap" id="' . $cart['ma_hd'] . '">' . $cart['trang_thai_don_hang'] . '</p>
                                 </div>
                             </td>
                             <td>';
