@@ -5,6 +5,7 @@ Router::get('/','App\Controllers\HomeController@index');
 Router::get('/home', 'App\Controllers\HomeController@index');
 Router::get('/product', 'App\Controllers\ProductController@product');
 Router::get('/productDetail', 'App\Controllers\ProductController@productDetail');
+Router::get('/deleteCart', 'App\Controllers\CartController@deleteCart');
 Router::get('/addCart', 'App\Controllers\CartController@addCart');
 Router::post('/addCart', 'App\Controllers\CartController@addCart');
 Router::get('/cart', 'App\Controllers\CartController@cart');

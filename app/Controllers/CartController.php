@@ -46,6 +46,13 @@ class CartController extends Controller
         }
         redirect('/cart');
     }
+    public function deleteCart()
+    {
+      
+        $ma_gh = Cart::join('users', 'users.ID_user', '=', 'carts.ID_user')->where('username', auth()->username)->first()->ma_gh;
+        CartDetail::where('ma_gh',$ma_gh)->where('ma_sp',$_GET['delete'])->delete();
+        redirect('/cart');
+    }
 
     public function pay()
     {

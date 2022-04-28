@@ -31,7 +31,7 @@
                                 <td class="pt-5">' . $cart['gia_sp'] . '$</td>
                                 <td class="pt-5">' . $cart['so_luong'] . '</td>
                                 <td class="pt-5">' . $sum . '$</td>
-                                <td class="pt-5"><a href = "Cart.php?delete=' . $cart['ma_sp'] . '">
+                                <td class="pt-5"><a href = "/deleteCart?delete=' . $cart['ma_sp'] . '">
                                 <button type="button" class="btn-close" aria-label="Close"></button></a>
                                 </td>
 
