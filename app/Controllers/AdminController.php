@@ -19,16 +19,18 @@ class AdminController extends Controller
             Bill::where('ma_hd', $_GET['delete'])->delete();
             BillDetail::where('ma_hd', $_GET['delete'])->delete();
         }
-        $data = ['carts' => Bill::all(), 'countBill' => Bill::count(),
-         'countProduct' => Product::count(), 'countUser' => User::count()];
+        $data = [
+            'carts' => Bill::all(), 'countBill' => Bill::count(),
+            'countProduct' => Product::count(), 'countUser' => User::count()
+        ];
         return $this->sendPage('admins/dashboard', $data);
     }
     public function Product()
-    {   
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            Product::where('ma_sp',$_POST['masp'])->update([
-                'ten_sp'=>$_POST['tensp'],
-                'gia_sp'=>$_POST['giasp']
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            Product::where('ma_sp', $_POST['masp'])->update([
+                'ten_sp' => $_POST['tensp'],
+                'gia_sp' => $_POST['giasp']
             ]);
         }
         return $this->sendPage('admins/Product', ['products' => Product::all()]);

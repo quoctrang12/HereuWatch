@@ -13,8 +13,10 @@ class ProductController extends Controller
         if (isset($_GET['malsp']))
             $products = Product::where('ma_lsp', $_GET['malsp'])->get();
         $data = [
-            'products' => $products, 'typeProduct' => TypeProduct::all(),
-            'male' => Product::where('ma_lsp', 'L01')->count(), 'female' => Product::where('ma_lsp', 'L02')->count()
+            'products' => $products, 
+            'typeProduct' => TypeProduct::all(),
+            'male' => Product::where('ma_lsp', 'L01')->count(), 
+            'female' => Product::where('ma_lsp', 'L02')->count()
         ];
         return $this->sendPage('products/product', $data);
     }

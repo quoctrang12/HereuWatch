@@ -25,6 +25,9 @@ class CartController extends Controller
 
     public function addCart()
     {
+        if (!auth()) {
+            return $this->sendPage('home/index');
+        }
         $soluong = 1;
         $masp = $_GET['masp'];
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,9 +51,9 @@ class CartController extends Controller
     }
     public function deleteCart()
     {
-      
+
         $ma_gh = Cart::join('users', 'users.ID_user', '=', 'carts.ID_user')->where('username', auth()->username)->first()->ma_gh;
-        CartDetail::where('ma_gh',$ma_gh)->where('ma_sp',$_GET['delete'])->delete();
+        CartDetail::where('ma_gh', $ma_gh)->where('ma_sp', $_GET['delete'])->delete();
         redirect('/cart');
     }
 

@@ -79,7 +79,7 @@
                             <div>
                                 <h3 class="card-text w-100"><?php $sum = 0;
                                                             foreach ($carts as $cart) {
-                                                                if ($cart->trang_thia_don_hang == 'Đã xác nhận') $sum += $cart->tong_tien;
+                                                                if ($cart->trang_thai_don_hang == 'Đã xác nhận') $sum += $cart->tong_tien;
                                                             }
                                                             echo $sum; ?>$</h3>
                             </div>
@@ -144,13 +144,6 @@
 
             </table>
         </div>
-        <script>
-            $(document).ready(function() {
-                if ($('#<?= $cart['ma_hd'] ?>').text() === "Đã xác nhận") {
-                    $('#<?= $cart['ma_hd'] ?>').removeClass('alert-danger').addClass('alert-success');
-                }
-            })
-        </script>
     </div>
 </div>
 <?php $this->stop(); ?>
